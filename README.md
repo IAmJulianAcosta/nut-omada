@@ -33,13 +33,18 @@ Omada API which is currently used to switch POE ports on an Omada switch, and ca
 - Set `PORT` value, for the local server. Defaults to 9973.
 
 ## Run
-- Ensure that NUT is configured correctly. You can run `upsc <YOUR_UPS_NAME_IN_ups.conf>@localhost ups.status` to confirm.
 - `pnpm run build` to transpile to JS.
 - Ensure that the .js scripts are runnable by the users.
 - `pnpm start` to start the server.
+- Ensure that NUT is configured correctly. You can run `upsc <YOUR_UPS_NAME_IN_ups.conf>@localhost ups.status` to confirm.
+- Trigger a change on the UPS status by disconnecting and reconnecting it.
 
 ## Users and permissions
 The user running the script `ups/nut-event-handler.js` is by default `nut`. Please make sure that the user `nut` and/or group `nut` have read and execute access to scripts, and write access to logs.
 
 # Further development
 If you want to customize this and add your own functionality I'd recommend to get a cheap smart plug and connect it to the UPS so you can control its power with an app on your phone.
+
+You also can write your own functions to control your own devices by using the [Omada API]([Docs](https://use1-omada-northbound.tplinkcloud.com/doc.html#/home). 
+
+You are not limited to use this repository for Omada actions, you can use to trigger anything you want. You can add your own actions to `src/ups/actions` and add them to `src/omada/config/actions.ts`.
