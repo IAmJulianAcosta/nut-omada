@@ -33,6 +33,7 @@ Omada API which is currently used to switch POE ports on an Omada switch, and ca
 - Set `PORT` value, for the local server. Defaults to 9973.
 
 ## Run
+- Ensure that NUT is configured correctly. You can run `upsc <YOUR_UPS_NAME_IN_ups.conf>@localhost ups.status` to confirm.
 - `pnpm run build` to transpile to JS.
 - Ensure that the .js scripts are runnable by the users.
 - `pnpm start` to start the server.
